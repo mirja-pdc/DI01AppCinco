@@ -24,13 +24,18 @@
     </ion-card-header>
 
     <ion-card-content>
-      <!-- DONE Añadimos [formGroup] al formulario y le asignamos nuestro FormGroup -->
-      <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+      <!-- DONE Añadimos [formGroup] al formulario y le asignamos nuestro FormGroup, "formulario" -->
+      <!-- Al enviar el formulario, Angular intercepta el evento y llama a agregarElemento() -->
+      <form [formGroup]="formulario" (ngSubmit)="agregarElemento()"> 
 
         <!-- TODO TA05: formControlName="nombre" enlaza este input con
              el FormControl "nombre" del FormGroup.
              Al escribir, el FormControl se actualiza automáticamente. -->
-
+        <ion-input formControlName="nombre" type="text"
+          label="Nombre *" labelPlacement="stacked"
+          fill="outline"></ion-input> 
+          <!-- El valor del input se sincroniza automáticamente con registroForm.get('nombre').value
+      
         <!-- TODO TA05: Al igual que con el nombre lo hacemos para "descripcion" -->
         
         <!-- TODO TA05: "categoria" es opcional en el modelo -->
