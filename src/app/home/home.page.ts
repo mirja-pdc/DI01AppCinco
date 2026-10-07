@@ -60,11 +60,23 @@ export class HomePage {
 
   private router = inject(Router);
   private toastController = inject(ToastController);
+  // Injectamos FormBuilder para simplificar la creación del formulario reactivo (MEJORA SUGERIDA EN EL ENUNCIADO)
+  private fb = inject(FormBuilder);
 
-  formulario = new FormGroup({
-    nombre: new FormControl('', [Validators.required, Validators.minLength(3)]),
-    descripcion: new FormControl('', [Validators.required, Validators.minLength(5)]),
-    categoria: new FormControl('', [Validators.required, Validators.minLength(3)])
+  // Creamos el formulario reactivo con FormBuilder (MEJORA SUGERIDA EN EL ENUNCIADO),
+  // en lugar de con FormGroup y FormControl e instanciando cada FormControl con 'new' 
+  // como en la plantilla del ejericicio:
+  //
+  //    formulario = new FormGroup({
+  //      nombre: new FormControl('', [Validators.required, Validators.minLength(3)]),
+  //      descripcion: new FormControl('', [Validators.required, Validators.minLength(5)]),
+  //      categoria: new FormControl('', [Validators.required, Validators.minLength(3)])
+  //    });
+
+  formulario = this.fb.group({
+        nombre: ['', [Validators.required, Validators.minLength(3)]],
+        descripcion: ['', [Validators.required, Validators.minLength(5)]],
+        categoria: ['', [Validators.required, Validators.minLength(3)]]
   });
 
   constructor() {}
