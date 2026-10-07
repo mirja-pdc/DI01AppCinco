@@ -35,11 +35,39 @@
           label="Nombre *" labelPlacement="stacked"
           fill="outline"></ion-input> 
           <!-- El valor del input se sincroniza automáticamente con formulario.get('nombre').value -->
+
+        <!-- Si hacemos click dentro del input nombre y si al salir está vacío, 
+            aparecerá un mensaje 'El nombre es obligatorio'. 
+            Por otra parte, el nombre tendrá que tener mínimo 3 caracteres. -->
+        @if (formulario.get('nombre')?.invalid && formulario.get('nombre')?.touched) {
+          <ion-note color="danger">
+          @if (formulario.get('nombre')?.errors?.['required']) {
+            El nombre es obligatorio.
+          }
+          @if (formulario.get('nombre')?.errors?.['minlength']) {
+            El nombre debe tener al menos 3 caracteres.
+          }
+          </ion-note>
+        }
       
         <!-- DONE TA05: Al igual que con el nombre lo hacemos para "descripcion" -->
         <ion-input formControlName="descripcion" type="text"
           label="Descripción *" labelPlacement="stacked"
           fill="outline"></ion-input> 
+
+        <!-- Si hacemos click dentro del input descripción y al salir está vacío, 
+            aparecerá el mensaje 'La descripción es obligatoria'. 
+            Por otra parte, la descripción tendrá que tener mínimo 5 caracteres. -->
+        @if (formulario.get('descripcion')?.invalid && formulario.get('descripcion')?.touched) {
+          <ion-note color="danger">
+          @if (formulario.get('descripcion')?.errors?.['required']) {
+            La descripción es obligatoria.
+          }
+          @if (formulario.get('descripcion')?.errors?.['minlength']) {
+            La descripción debe tener al menos 5 caracteres.
+          }
+          </ion-note>
+        }
 
         <!-- DONE TA05: "categoria" es opcional en el modelo, por lo que su label no tiene * -->
         <ion-input formControlName="categoria" type="text"
@@ -50,7 +78,6 @@
             haciendo que al pulsar el botón se dispare el evento 
             (ngSubmit)="agregarElemento()" del formulario -->
         <ion-button type="submit" expand="block">Agregar Elemento</ion-button>
-
       </form>
     </ion-card-content>
   </ion-card>
