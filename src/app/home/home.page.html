@@ -41,12 +41,14 @@
           label="Descripción *" labelPlacement="stacked"
           fill="outline"></ion-input> 
 
-        <!-- DONE TA05: "categoria" es opcional en el modelo -->
+        <!-- DONE TA05: "categoria" es opcional en el modelo, por lo que su label no tiene * -->
         <ion-input formControlName="categoria" type="text"
           label="Categoría" labelPlacement="stacked"
           fill="outline"></ion-input>
 
-        <!-- DONE TA05: type="submit" lanza (ngSubmit) del <form> -->
+        <!-- DONE TA05: type="submit" lanza (ngSubmit) del <form>, 
+            haciendo que al pulsar el botón se dispare el evento 
+            (ngSubmit)="agregarElemento()" del formulario -->
         <ion-button type="submit" expand="block">Agregar Elemento</ion-button>
 
       </form>

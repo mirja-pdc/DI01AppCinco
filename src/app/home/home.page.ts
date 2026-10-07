@@ -76,7 +76,8 @@ export class HomePage {
   formulario = this.fb.group({
         nombre: ['', [Validators.required, Validators.minLength(3)]],
         descripcion: ['', [Validators.required, Validators.minLength(5)]],
-        categoria: ['', [Validators.required, Validators.minLength(3)]]
+        // Se ha quitado Validators.required porque categoria es opcional en el modelo Elemento
+        categoria: ['', Validators.minLength(3)]
   });
 
   constructor() {}
