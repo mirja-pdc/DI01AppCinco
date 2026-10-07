@@ -8,16 +8,15 @@
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/home"></ion-back-button>
     </ion-buttons>
-     <!-- TODO: Modificar <ion-title>{{ elementoDetalle?.nombre }}</ion-title> -->
-    <!-- Con signal, leemos el valor llamándolo como función: elementoDetalle() -->
+    <!-- ESTABA DONE: Modificar <ion-title>{{ elementoDetalle?.nombre }}</ion-title> -->
+    <!-- Con signal, leemos el valor de la señal llamándola como función: {{ elementoDetalle()?.nombre }}-->
     <ion-title>{{ elementoDetalle()?.nombre }}</ion-title>
-
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
 
-  <!-- TODO: Modificar elementoDetalle por elementoDetalle()-->
+  <!-- ESTABA DONE: Modificar elementoDetalle por elementoDetalle()-->
   <!-- @if evalúa el signal como función; dentro del bloque, elementoDetalle() ya tiene valor -->
   @if (elementoDetalle()) {
     <ion-list>
