@@ -74,6 +74,16 @@
           label="Categoría" labelPlacement="stacked"
           fill="outline"></ion-input>
 
+        <!-- Mensaje de error y validación de categoria.
+            Es opcional, pero tiene que tener mínimo 3 caracteres si se escribe. -->
+        @if (formulario.get('categoria')?.invalid && formulario.get('categoria')?.touched) {
+          <ion-note color="danger">
+          @if (formulario.get('categoria')?.errors?.['minlength']) {
+            La categoría debe tener al menos 3 caracteres.
+          }
+          </ion-note>
+        }
+
         <!-- DONE TA05: type="submit" lanza (ngSubmit) del <form>, 
             haciendo que al pulsar el botón se dispare el evento 
             (ngSubmit)="agregarElemento()" del formulario -->
