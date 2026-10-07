@@ -24,8 +24,8 @@
     </ion-card-header>
 
     <ion-card-content>
-      <!-- TODO Añadimos [formGroup] al formulario y le asignamos nuestro FormGroup -->
-      <form>
+      <!-- DONE Añadimos [formGroup] al formulario y le asignamos nuestro FormGroup -->
+      <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
 
         <!-- TODO TA05: formControlName="nombre" enlaza este input con
              el FormControl "nombre" del FormGroup.
