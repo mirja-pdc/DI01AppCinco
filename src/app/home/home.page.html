@@ -34,13 +34,20 @@
         <ion-input formControlName="nombre" type="text"
           label="Nombre *" labelPlacement="stacked"
           fill="outline"></ion-input> 
-          <!-- El valor del input se sincroniza automáticamente con registroForm.get('nombre').value
+          <!-- El valor del input se sincroniza automáticamente con formulario.get('nombre').value -->
       
-        <!-- TODO TA05: Al igual que con el nombre lo hacemos para "descripcion" -->
-        
-        <!-- TODO TA05: "categoria" es opcional en el modelo -->
+        <!-- DONE TA05: Al igual que con el nombre lo hacemos para "descripcion" -->
+        <ion-input formControlName="descripcion" type="text"
+          label="Descripción *" labelPlacement="stacked"
+          fill="outline"></ion-input> 
 
-        <!-- TODO TA05: type="submit" lanza (ngSubmit) del <form> -->
+        <!-- DONE TA05: "categoria" es opcional en el modelo -->
+        <ion-input formControlName="categoria" type="text"
+          label="Categoría" labelPlacement="stacked"
+          fill="outline"></ion-input>
+
+        <!-- DONE TA05: type="submit" lanza (ngSubmit) del <form> -->
+        <ion-button type="submit" expand="block">Agregar Elemento</ion-button>
 
       </form>
     </ion-card-content>
