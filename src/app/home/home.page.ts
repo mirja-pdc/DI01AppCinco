@@ -23,7 +23,7 @@ import { Elemento } from '../models/elemento.model';
     IonHeader, IonToolbar, IonTitle, IonContent, IonFooter,
     IonList, IonItem, IonLabel, IonButton, IonInput,
     // DONE TA05 - Añadimos los componentes Ionic necesarios para el formulario:
-    // IonText para envolver o formatear texto dentro del formulario, y
+    // IonText para envolver o formatear texto dentro del formulario, e
     // IonNote para mostrar los mensajes de validación o error (por ejemplo con color="danger")
     IonText, IonNote,
     IonCard, IonCardHeader, IonCardTitle, IonCardContent,
