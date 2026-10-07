@@ -4,6 +4,7 @@ import {
   IonHeader, IonToolbar, IonTitle, IonContent, IonFooter,
   IonList, IonItem, IonLabel, IonButton, IonInput,
   IonCard, IonCardHeader, IonCardTitle, IonCardContent,
+  IonText, IonNote, // Añadidos aquí también para que el array de abajo los reconozca
   ToastController
 } from '@ionic/angular/standalone';
 // DONE TA05 – Formularios reactivos: Añadido FormBuilder a los imports, siguiendo sección 9 de apuntes
